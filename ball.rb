@@ -42,7 +42,9 @@ class TestArea
 		@balls
 	end
 end
-main = TestArea.new("Main",10)
+puts "Set area range"
+#@userRange = gets.chomp
+main = TestArea.new("Main",@userRange)
 redBall = Ball.new(0,main,"Red")
 redBall.roll(1)
 

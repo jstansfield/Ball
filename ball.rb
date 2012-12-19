@@ -13,7 +13,7 @@ class Ball
 		if (inRange)
 			@position
 		else
-			return "OUT OF BOUNDS"
+			return "OUT OF BOUNDS (#{@position})"
 		end
 	end
 	def inRange

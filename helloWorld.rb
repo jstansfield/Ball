@@ -9,3 +9,4 @@ end
 
 hello = HelloWorld.new("World")
 hello.sayHi()
+print "hello2"

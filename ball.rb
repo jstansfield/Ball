@@ -1,4 +1,5 @@
 class Ball
+	attr_accessor :color
 	def initialize(position,testArea,color)
 		@position = position
 		@color = color
@@ -22,9 +23,6 @@ class Ball
 		else
 			true
 		end
-	end
-	def color
-		@color
 	end
 end
 

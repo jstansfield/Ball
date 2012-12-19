@@ -6,18 +6,14 @@ class Ball
 		@testArea = testArea
 		@testArea.addBall()
 	end
-	def roll(amount)
-		if (amount.is_a? Integer)
-			@position = @position + amount
-		else
-			@position = @position
-		end
+	def roll(amount)	
+		@position = @position + amount
 	end
 	def getPosition
 		if (inRange)
 			@position
 		else
-			@position = "OUT OF BOUNDS"
+			return "OUT OF BOUNDS"
 		end
 	end
 	def inRange

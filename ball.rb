@@ -7,7 +7,11 @@ class Ball
 		@testArea.addBall()
 	end
 	def roll(amount)
-		@position = @position + amount
+		if (amount.is_a? Integer)
+			@position = @position + amount
+		else
+			@position = @position
+		end
 	end
 	def getPosition
 		if (inRange)
@@ -24,32 +28,3 @@ class Ball
 		end
 	end
 end
-
-class TestArea
-	attr_accessor :name
-	attr_accessor :range
-	def initialize(name,range)
-		@name = name
-		@balls = 0
-		@range = range
-		
-	end
-	def addBall()
-		@balls += 1
-	end
-	def countBalls
-		@balls
-	end
-end
-
-main = TestArea.new("Main",12)
-redBall = Ball.new(0,main,"Red")
-redBall.roll(1)
-
-blueBall = Ball.new(1,main,"Blue")
-blueBall.roll(6)
-
-
-print "There are #{main.countBalls} balls in the area #{main.name}\n"
-print "#{redBall.color} ball is in position #{redBall.getPosition} \n" 
-print "#{blueBall.color} ball is in position #{blueBall.getPosition}"

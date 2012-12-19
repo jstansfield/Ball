@@ -8,14 +8,13 @@ class Ball
 	end
 	def roll(amount)
 		@position = @position + amount
+	end
+	def getPosition
 		if (inRange)
 			@position
 		else
 			@position = "OUT OF BOUNDS"
 		end
-	end
-	def getPosition
-		@position
 	end
 	def inRange
 		if (@position > @testArea.range)
@@ -42,15 +41,14 @@ class TestArea
 		@balls
 	end
 end
-puts "Set area range"
-#@userRange = gets.chomp
-main = TestArea.new("Main",@userRange)
+
+main = TestArea.new("Main",12)
 redBall = Ball.new(0,main,"Red")
 redBall.roll(1)
 
 blueBall = Ball.new(1,main,"Blue")
 blueBall.roll(6)
-blueBall.roll(4)
+
 
 print "There are #{main.countBalls} balls in the area #{main.name}\n"
 print "#{redBall.color} ball is in position #{redBall.getPosition} \n" 
